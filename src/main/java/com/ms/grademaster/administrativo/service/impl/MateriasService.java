@@ -59,7 +59,7 @@ public class MateriasService implements IMateriasService {
     @Override
     @Transactional
     public void crearMateria(MateriaDto materia, List<HorarioDTO> horarios, SemestreDto semestre) {
-        EstadoDto estadoDto = estadoMapper.entityToDto(estadoRepository.findByNombre("HABILITADO"));
+        EstadoDto estadoDto = estadoMapper.entityToDto(estadoRepository.findByNombre("ACTIVO"));
         materia.setEstadoEntityFk(estadoDto);
         materiaRepository.save(materiaMapper.dtoToEntity(materia));
         materiaHorarioRepository.saveAll(materiaHorarioMapper.objetosListToMateriaHorario(

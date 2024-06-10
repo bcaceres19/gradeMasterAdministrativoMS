@@ -39,7 +39,7 @@ public class MateriaController {
     @GetMapping("/codigo")
     public ResponseEntity<RespuestaGeneralDto> generarCodigo(){
         RespuestaGeneralDto respuestaGeneral =  new RespuestaGeneralDto();
-        respuestaGeneral.setData(iGenerarRecursos.generarCodigo(null, TipoUsuarioEnum.MATERIA, Constantes.INICIALES_ESTUDIANTE));
+        respuestaGeneral.setData(iGenerarRecursos.generarCodigo(null, TipoUsuarioEnum.MATERIA, Constantes.INICIALES_MATERIA));
         respuestaGeneral.setEstado(EstadoRespuestaEnum.OK);
         return ResponseEntity.ok(respuestaGeneral);
     }

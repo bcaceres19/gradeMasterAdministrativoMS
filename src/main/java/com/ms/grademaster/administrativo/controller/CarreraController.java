@@ -40,7 +40,7 @@ public class CarreraController {
     @GetMapping("/codigo")
     public ResponseEntity<RespuestaGeneralDto> generarCodigo(){
         RespuestaGeneralDto respuestaGeneral =  new RespuestaGeneralDto();
-        respuestaGeneral.setData(iGenerarRecursos.generarCodigo(null, TipoUsuarioEnum.CARRERA, Constantes.INICIALES_ESTUDIANTE));
+        respuestaGeneral.setData(iGenerarRecursos.generarCodigo(null, TipoUsuarioEnum.CARRERA, Constantes.INICIALES_CARRERA));
         respuestaGeneral.setEstado(EstadoRespuestaEnum.OK);
         return ResponseEntity.ok(respuestaGeneral);
     }

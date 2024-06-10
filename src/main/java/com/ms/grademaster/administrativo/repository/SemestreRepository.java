@@ -11,7 +11,7 @@ import java.util.List;
 public interface SemestreRepository extends JpaRepository<SemestreEntity, Long> {
 
     @Query(value = """
-        select top 1 * FROM Semestre s order by s.fecha_fin desc
+        select  * FROM dbo.semestre s order by s.fecha_fin desc limit 1
     """, nativeQuery = true)
     List<Object[]> ultimoSemestre();
 
